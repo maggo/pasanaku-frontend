@@ -23,12 +23,6 @@ export default function PasanakuPage() {
   const [remainingTime, setRemainingTime] = useState<string>("");
   const [isRoundEnded, setIsRoundEnded] = useState(false);
 
-  const { data: groupAddress } = useReadContract({
-    abi: PasanakuABI,
-    address: pasanakuAddress as `0x${string}`,
-    functionName: "group",
-  });
-
   const { data: potAmount } = useReadContract({
     abi: PasanakuABI,
     address: pasanakuAddress as `0x${string}`,

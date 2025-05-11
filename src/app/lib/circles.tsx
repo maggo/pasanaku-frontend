@@ -1,14 +1,10 @@
-import {
-  BrowserProviderContractRunner,
-  SdkContractRunnerWrapper,
-} from "@circles-sdk/adapter-ethers";
+import { BrowserProviderContractRunner } from "@circles-sdk/adapter-ethers";
 import { GroupProfile } from "@circles-sdk/profiles";
 import { Sdk } from "@circles-sdk/sdk";
 import { useAppKitProvider } from "@reown/appkit/react";
 import type { Provider } from "ethers";
 import { BrowserProvider } from "ethers";
 import React, { createContext, useCallback, useEffect, useState } from "react";
-import type { Address } from "viem";
 
 type CirclesSDKContextType = {
   sdk: Sdk | null;

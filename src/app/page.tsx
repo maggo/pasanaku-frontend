@@ -6,8 +6,6 @@ import Image from "next/image";
 import { useContext, useState } from "react";
 
 export default function Home() {
-  const { sdk } = useContext(CirclesSDKContext)!;
-
   return (
     <div className={"pages"}>
       <Image src="/reown.svg" alt="Reown" width={150} height={150} priority />
