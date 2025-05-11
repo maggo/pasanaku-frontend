@@ -53,9 +53,6 @@ export default function PasanakuPage() {
     functionName: "roundInterval",
   });
 
-  console.log("Round started at:", roundStartedAt?.toString());
-  console.log("Round interval:", roundInterval?.toString());
-
   const { data } = useQuery({
     queryKey: ["pasanaku", "memberships", isConnected, pasanakuAddress],
     queryFn: async () => {
@@ -111,8 +108,6 @@ export default function PasanakuPage() {
       const endTime = Number(roundStartedAt) + Number(roundInterval);
       const now = Math.floor(Date.now() / 1000);
       const remaining = endTime - now;
-
-      console.log("Remaining time:", remaining);
 
       if (remaining <= 0) {
         setRemainingTime("Round ended");

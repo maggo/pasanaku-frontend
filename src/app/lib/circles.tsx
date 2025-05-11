@@ -2,7 +2,7 @@ import { BrowserProviderContractRunner } from "@circles-sdk/adapter-ethers";
 import { GroupProfile } from "@circles-sdk/profiles";
 import { Sdk } from "@circles-sdk/sdk";
 import { useAppKitProvider } from "@reown/appkit/react";
-import type { Provider } from "ethers";
+import type { Eip1193Provider, Provider } from "ethers";
 import { BrowserProvider } from "ethers";
 import React, { createContext, useCallback, useEffect, useState } from "react";
 
@@ -55,7 +55,9 @@ export const CirclesSDK = ({ children }: { children: React.ReactNode }) => {
     try {
       // Create and initialize the adapter
       const adapter = new BrowserProviderContractRunner();
-      const ethersProvider = new BrowserProvider(walletProvider as any);
+      const ethersProvider = new BrowserProvider(
+        walletProvider as Eip1193Provider
+      );
       adapter.provider = ethersProvider;
       await adapter.init(); // Initialize the adapter before using it
 
