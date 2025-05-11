@@ -183,11 +183,10 @@ export default function PasanakuPage() {
             {depositedMembers} out of {totalMembers} members deposited
           </span>
         </CardContent>
-        <div className="w-full px-6 mb-1">
-          {isRoundEnded && depositedMembers > 0 ? (
+        <div className="w-full px-6 mb-1 flex flex-col gap-2">
+          <DepositButton pasanakuAddress={pasanakuAddress as string} />
+          {isRoundEnded && depositedMembers > 0 && (
             <WithdrawButton pasanakuAddress={pasanakuAddress as string} />
-          ) : (
-            <DepositButton pasanakuAddress={pasanakuAddress as string} />
           )}
         </div>
         <span className="text-xs text-gray-500 mb-2">
